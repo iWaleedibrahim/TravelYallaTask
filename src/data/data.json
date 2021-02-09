@@ -1,0 +1,108 @@
+
+
+{
+    "categories": [
+      {
+        "id": 21280,
+        "name": "Action",
+        "desc":"movies about fighting, chasing, mafia and that stuff",
+        "movies": [
+          {
+            "id": 132548,
+            "name": "SPIDER-MAN 2 ",
+            "description": "Boasting an entertaining villain and deeper emotional focus, this is a nimble sequel that improves upon the original",
+            "rate": "4.0"
+          },
+          {
+            "id": 132549,
+            "name": "BATTLE ROYALE",
+            "description": "Battle Royale is a controversial and violent parable of adolescence, heightening teenage melodrama with life-or-death stakes.",
+            "rate": "3.5"
+          },
+          {
+            "id": 132550,
+            "name": "ESCAPE FROM NEW YORK",
+            "description": "Featuring an atmospherically grimy futuristic metropolis, Escape from New York is a strange, entertaining jumble of thrilling action and oddball weirdness.",
+            "rate": "4.2"
+          },
+          {
+            "id": 132551,
+            "name": "IRON MONKEY",
+            "description": "Iron Monkey may not have the poetic lyricism of Crouching Tiger, it makes up for it in fun and energy.",
+            "rate": "3.8"
+          }
+        ]
+      },
+      {
+        "id": 21281,
+        "name": "Comedy",
+        "desc":"movies about funny stuff and lauging",
+        "movies": [
+          {
+            "id": 132552,
+            "name": "Juno",
+            "description": "The chemical equation of writer Diablo Cody plus director Jason Reitman explodes onscreen with this non-traditional family comedy showcasing Cody’s edgy contemporary dialogue.",
+            "rate": "4.3"
+          },
+          {
+            "id": 132553,
+            "name": "Shaun of the Dead",
+            "description": "This acerbic action comedy introduced a winning combo: sparring buddies Simon Pegg and Nick Frost and master of style Edgar Wright, who dreamed up the script with Pegg.",
+            "rate": "4.1"
+          },
+          {
+            "id": 132554,
+            "name": "Old School",
+            "description": "You’re my boy, Blue! Say what you will about the Frat Pack films that followed it, but “Old School” still gets a passing grade.",
+            "rate": "2.4"
+          },
+          {
+            "id": 132555,
+            "name": "Trainwreck",
+            "description": "Producer Judd Apatow steered breakout standup comic Amy Schumer to her smash big-screen debut ($141 million worldwide) by helping her to write a recognizably real woman to play — accessible, honest, emotional — within the genre confines of a mainstream romantic comedy.",
+            "rate": "3.9"
+          }
+        ]
+      },
+      {
+        "id": 21282,
+        "name": "Romance",
+        "desc":"movies about love and relationships",
+        "movies": [
+          {
+            "id": 132556,
+            "name": "A walk to remember",
+            "description": "Producer Judd Apatow steered breakout standup comic Amy Schumer to her smash big-screen debut ($141 million worldwide) by helping her to write a recognizably real woman to play — accessible, honest, emotional — within the genre confines of a mainstream romantic comedy.",
+            "rate": "3.9"
+          },
+          {
+            "id": 132557,
+            "name": "About Time",
+            "description": "At the age of 21, Tim discovers he can travel in time and change what happens and has happened in his own life. His decision to make his world a better place by getting a girlfriend turns out not to be as easy as you might think.",
+            "rate": "4.8"
+          }
+        ]
+      },
+      {
+        "id": 21281,
+        "name": "Adventure",
+        "desc":"movies about travel and dangers",
+        "movies": [
+          {
+            "id": 132558,
+            "name": "Jungle",
+            "description": "A group of friends join a guide for a trek into the Bolivian jungle, searching for an Indian village. The men soon realize that the jungle is a difficult place to be.",
+            "rate": "3.5"
+          },
+          {
+            "id": 132559,
+            "name": "Deadpool 2 ",
+            "description": "Foul-mouthed mutant mercenary Wade Wilson (a.k.a. Deadpool), brings together a team of fellow mutant rogues to protect a young boy with supernatural abilities from the brutal, time-traveling cyborg Cable.",
+            "rate": "3.9"
+          }
+        ]
+      }
+    ]
+  }
+
+  
