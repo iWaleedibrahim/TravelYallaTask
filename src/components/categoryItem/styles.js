@@ -8,12 +8,13 @@ const styles = StyleSheet.create({
   itemContainer: { 
     width: DIMS.screenWidth / 2  - 32,
     borderRadius: 15,
-    marginTop: 15,
-    marginVertical: 8,
+    marginTop: 8,
     marginHorizontal: 16,
+    // backgroundColor: 'teal',
+    alignItems:'center'
   },
   image: {
-    width: DIMS.screenWidth / 2 - 64,
+    width: DIMS.screenWidth / 2  - 32,
     height: DIMS.screenWidth / 2,
     borderRadius: 15,
     marginHorizontal: 16,
@@ -26,12 +27,16 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     fontSize: 13, 
     marginBottom: 2,
+    textAlign:'left',
+    width:'100%'
+
   },
   description: {
     color: COLORS.TEAL,
     marginLeft: 16,
     fontSize: 11, 
-    marginBottom: 12,
+    textAlign:'left',
+    width:'100%'
   }
 })
 

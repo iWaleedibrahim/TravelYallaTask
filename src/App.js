@@ -10,12 +10,6 @@ import STORAGE_KEYS from './constants/storage_keys'
 import { removeDataFromLocalStorage } from './utils/AsyncStorage'
 
 export default function App() {
-
-//   useEffect(() => {
-//     removeDataFromLocalStorage(STORAGE_KEYS.CATEOGRIES)
-// }, []);
-
-
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.MAINBLUE }}>
       <StatusBar color={COLORS.MAINBLUE} />
@@ -25,3 +19,4 @@ export default function App() {
     </SafeAreaView>
   );
 }
+

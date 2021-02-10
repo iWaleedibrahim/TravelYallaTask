@@ -5,7 +5,7 @@ import COLORS from "../../common/colors"
 
 
 const textInputHeight = DIMS.screenHeight / 20
-const textInputWidth = DIMS.screenWidth * 0.872
+const textInputWidth = DIMS.screenWidth * 0.7893
 
 
 const styles = StyleSheet.create({
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 0,
     marginBottom: 10,
+    alignSelf:'center',
   },
   icon: {
     marginRight: 15,
@@ -32,8 +33,9 @@ const styles = StyleSheet.create({
     fontWeight: "normal",
     opacity: 0.75,
     paddingVertical: 0,
-    fontSize: 20,
+    fontSize: 14,
     color: COLORS.blue,
+    fontFamily:FONTS.Verdana
   },
 });
 

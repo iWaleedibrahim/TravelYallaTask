@@ -8,5 +8,7 @@ export default COLORS = {
     FULL_WHITE: "#FFFFFF",
     FULL_BLACK: "#000000",
     FULL_TRANSPARENT: "transparent",
-    TEAL: 'teal'
+    TEAL: 'teal',
+    TEXT_GRAY: '#878787',
+    
   };

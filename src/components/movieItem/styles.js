@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     width: DIMS.screenWidth  - 32,
     borderRadius: 15,
     marginTop: 15,
-    marginVertical: 8,
+    // marginVertical: 8,
     marginHorizontal: 16,
   },
   image: {
@@ -27,19 +27,19 @@ const styles = StyleSheet.create({
     fontSize: 18, 
     marginTop: 3,
     marginBottom: 12,
-
   },
   description: {
-    color: COLORS.TEAL,
+    color: COLORS.TEXTGRAY,
     maxWidth: 200,
     marginBottom: 41,
-    fontSize: 11, 
+    fontSize: 9, 
+    textAlign: 'justify'
   },
   button: { 
     marginHorizontal: 8
   },
   buttonText: {
-    fontSize: 16
+    fontSize: 13
   },
 })
 

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { FlatList, Text, View, RefreshControl, ActivityIndicator } from 'react-native'
 import { Input, Button, MovieItem, AddElement } from '../../components'
 import IMAGES from '../../common/images'
-import { getMoviesForCategoryOfId } from '../../utils/helpers'
 import Icon from "react-native-vector-icons/FontAwesome"
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -10,6 +9,8 @@ import { getMoviesByCateogryId, addNewMovieToCateogryById } from '../../actions'
 import styles from './styles'
 import COLORS from '../../common/colors'
 import TEXT from '../../common/text'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+
 
 
 function Movies(props) {
@@ -18,7 +19,6 @@ function Movies(props) {
 
     const [movies, setMovies] = useState(null);
 
-    
     useEffect(() => {
         props.getMoviesByCateogryId(props.route.params.id)
         return setMovies([])
@@ -32,9 +32,9 @@ function Movies(props) {
 
     useEffect(() => {
         if (props.movies) {
-            setMovies(props.movies)
-            setRefreshing(false)
+            setMovies(props.movies.reverse())
         }
+          setRefreshing(false)
     }, [props.movies]);
 
     function createNewMovie(values) {
@@ -54,26 +54,26 @@ function Movies(props) {
         }
     }
 
-
     return (
         <>
-            <View style={{ justifyContent: 'center', alignItems: 'center', marginHorizontal: 16 }}>
+            <View style={{ justifyContent: 'center', alignItems: 'center', marginHorizontal: 16, marginTop: 24 }}>
 
                 <AddElement
                     fields={[
                         {
                             id: 'name',
-                            fieldIcon: <Icon name="gavel" color={'red'} size={30} />,
+                              fieldIcon: <MaterialIcons name="domain" size={20} color="gray" style={{marginRight: 10}}/>,
                             placeHolder: 'Movie Name',
                         },
                         {
                             id: 'rate',
-                            fieldIcon: <Icon name="gavel" color={'red'} size={30} />,
+                              fieldIcon: <MaterialIcons name="domain" size={20} color="gray" style={{marginRight: 10}}/>,
                             placeHolder: "Movie Rate",
+                            keyboardType: 'numeric',
                         },
                         {
                             id: 'desc',
-                            fieldIcon: <Icon name="gavel" color={'red'} size={30} />,
+                              fieldIcon: <MaterialIcons name="domain" size={20} color="gray" style={{marginRight: 10}}/>,
                             placeHolder: "Movie Description",
                         },
                     ]}
@@ -98,7 +98,7 @@ function Movies(props) {
                         // style={{ backgroundColor: "#c3c3c3", }}
                         renderItem={({ item }) =>
                             <MovieItem
-                                key={item.id}
+                                key={item.id.toString()}
                                 onPressEdit={() => console.warn('hello')}
                                 onPressDelete={() => console.warn('there!')}
                                 item={item}

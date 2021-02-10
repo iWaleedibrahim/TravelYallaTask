@@ -17,13 +17,13 @@ export const reducer = (state = INTIAL_STATE, action) => {
     case TYPES.GET_CATEGORIES_SUCCESS:
       return {
         ...state,
-        storageCategories: action.data.reverse(),
+        storageCategories: action.data,
         error: '',
       };
     case TYPES.ADD_NEW_CATOGRY_SUCCESS:
       return {
         ...state,
-        storageCategories: action.data.reverse(),
+        storageCategories: action.data,
         error: '',
       };
     case TYPES.ERROR_GETTING_CATEGORIES:
@@ -39,13 +39,13 @@ export const reducer = (state = INTIAL_STATE, action) => {
     case TYPES.GET_MOVIES_SUCCESS:
       return {
         ...state,
-        movies: action.data.reverse(),
+        movies: action.data,
         error: '',
       };
     case TYPES.ADD_NEW_MOVIE_SUCCESS:
       return {
         ...state,
-        movies: action.data.reverse(),
+        movies: action.data,
         error: '',
       };
     case TYPES.ERROR_ADDING_NEW_MOVIE:

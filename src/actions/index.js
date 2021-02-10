@@ -112,20 +112,14 @@ export function addNewMovieToCateogryById(name, rate, desc, categoryId) {
       let movies_count = movies.length
         movies.push(
           {
-            id: movies.length > 0 ? movies[movies.length - 1].id + 1 : 500000,
+            id: movies.length == 0 ? 10000 : (movies[movies.length - 1].id - 1000) + Math.floor(Math.random() * (100000 + 1)),
             name: name,
             rate: rate,
             description: desc
           })
       if (movies.length > movies_count) {
         dispatch({ type: TYPES.ADD_NEW_MOVIE_SUCCESS, data: movies });
-        let category_index = categories_collection.indexOf(category)
-
-        console.warn("category_index => ", category_index)
-        console.warn("categories_collection[category_index] => ", categories_collection[category_index])
-        if(category_index !== -1) categories_collection[category_index].movies = movies
         setDataToLocalStorage(STORAGE_KEYS.CATEOGRIES, categories_collection)
-        dispatch({ type: TYPES.GET_CATEGORIES_SUCCESS, data: categories_collection });
       } else {
         dispatch({
           type: TYPES.ERROR_ADDING_NEW_MOVIE,

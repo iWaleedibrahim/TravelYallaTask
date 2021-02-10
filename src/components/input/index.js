@@ -33,9 +33,8 @@ export default function Input(props) {
         onChangeText={onChangeText}
         returnKeyType={'done'}
         autoCapitalize={"none"}
-        keyboardType={'default'}
+        keyboardType={keyboardType || 'default'}
         autoCorrect={false}
-        {...props}
       />
     </View>
   )

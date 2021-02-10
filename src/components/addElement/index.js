@@ -23,10 +23,11 @@ export default function AddElement(props) {
       {fields.map(item => {
         return (
           <Input
-            key={item.placeHolder} // * look on comment blew
+            key={item.placeHolder.toString()} // * look on comment blew
             onChangeText={text =>  setValues({ ...values, [item.id]: text })}
             icon={item.fieldIcon}
             placeholder={item.placeHolder}
+            keyboardType={item.keyboardType}
             value={typeof values == 'object' ? values?.[item?.id] : ''  }
           />
         )

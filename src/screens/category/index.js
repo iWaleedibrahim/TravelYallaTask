@@ -8,6 +8,8 @@ import { getCategories, addNewCateogry } from "../../actions";
 import styles from './styles'
 import COLORS from '../../common/colors'
 import TEXT from '../../common/text'
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+
 
 
 
@@ -29,9 +31,9 @@ function Category(props)  {
 
     useEffect(() => {
         if(props.storageCategories) { 
-            setCategories(props.storageCategories)
-            setRefreshing(false)
+            setCategories(props.storageCategories.reverse())
         }
+        setRefreshing(false)
     }, [props.storageCategories]);
 
 
@@ -39,7 +41,7 @@ function Category(props)  {
 
         let categoryName = values?.categoryName
         let categoryDesc = values?.categoryDesc
-
+ 
         if(categories.includes(item =>  item.name === categoryName || item.desc === categoryDesc )) { 
             alert(TEXT.ERRORS.CATEGORYEXIST)
         } else { 
@@ -53,18 +55,19 @@ function Category(props)  {
 
     return (
         <>
-            <View style={{ justifyContent: 'center', alignItems: 'center', marginHorizontal: 16 }}>
+            <View style={{ justifyContent: 'center', alignItems: 'center', marginHorizontal: 16, marginTop: 24 }}>
               <AddElement 
               fields={[
                 { 
                     id: 'categoryName',
-                     fieldIcon: <Icon name="gavel" color={'red'} size={30} />,
-                     placeHolder: 'cateogry Name',
+                    //  fieldIcon: <Icon name="gavel" color={'red'} size={30} />,
+                     fieldIcon: <MaterialIcons name="domain" size={20} color="gray" style={{marginRight: 10}}/>,
+                     placeHolder: 'Cateogry Name',
                 },
                 {
                     id: 'categoryDesc',
-                    fieldIcon: <Icon name="gavel" color={'red'} size={30} />,
-                    placeHolder: "cateogry Description",
+                    fieldIcon: <MaterialIcons name="domain" size={20} color="gray" style={{marginRight: 10}}/>,
+                    placeHolder: "Cateogry Description",
                 },
               ]}
               onPressButton={(values) => createNewCateogry(values)}
@@ -83,8 +86,8 @@ function Category(props)  {
                     // style={{ backgroundColor: "#c3c3c3", }}
                     renderItem={({ item }) =>
                         <CategoryItem
-                            key={Math.random() + item.id}
-                            onPressItem={() => props.navigation.navigate("Movies", { id: item.id })}
+                            key={Math.random().toString() + item.id}
+                            onPressItem={() => props.navigation.navigate("Movies", { id: item.id, name: item.name })}
                             item={item}
                         />
                     }

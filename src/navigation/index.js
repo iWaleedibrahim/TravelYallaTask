@@ -1,5 +1,4 @@
 import React from "react"
-import { Image } from "react-native"
 import { createStackNavigator } from "@react-navigation/stack"
 import { NavigationContainer } from "@react-navigation/native"
 import Icon from "react-native-vector-icons/FontAwesome"
@@ -11,6 +10,8 @@ import {
   Category
 } from "../screens"
 import IMAGES from "../common/images"
+import FontAwsomeIcon from 'react-native-vector-icons/FontAwesome'
+import { removeDataFromLocalStorage } from "../utils/AsyncStorage"
 
 const MainStack = createStackNavigator()
 
@@ -32,35 +33,38 @@ function MainStackNavigator() {
           height: 70,
         }
       }}>
-         <MainStack.Screen
+      <MainStack.Screen
         name="Category"
         component={Category}
-        options={{
+        options={({ route }) => ({ 
+          title: route.params.name,
           tabBarLabel: "Category",
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="gavel" color={color} size={30} />
+        })}
+        options={{
+          headerRight: () => (
+            <FontAwsomeIcon
+              onPress={() => {
+                removeDataFromLocalStorage(STORAGE_KEYS.CATEOGRIES)
+                alert('Storage was rest to default data, now pull to refresh and restore defaults!')
+              }}
+              name={'trash-o'} color={'red'} size={30}
+              style={{ marginRight: 26 }}
+            />
           ),
         }}
       />
+
       <MainStack.Screen
         name="Movies"
         component={Movies}
-        options={{
-          tabBarLabel: "Movies",
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="gavel" color={color} size={30} />
-          ),
-        }}
+        options={({ route }) => ({ 
+          title: route.params.name,
+        })}
       />
-        <MainStack.Screen
+      <MainStack.Screen
         name="Home"
         component={Home}
-        options={{
-          tabBarLabel: "Home",
-          tabBarIcon: ({ color, size }) => (
-            <Icon name="gavel" color={color} size={30} />
-          ),
-        }}
+        options={{}}
       />
     </MainStack.Navigator>
   )

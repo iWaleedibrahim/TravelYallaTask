@@ -16,5 +16,6 @@ export default IMAGES = {
     POSTER: require("../assets/images/poster.jpg"),
 
     NO_IMAGE: require("../assets/images/noimage.jpg"),
+    CORN: require("../assets/images/corn.jpg"),
   };
 
