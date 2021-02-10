@@ -7,7 +7,7 @@ import {
   setDataToLocalStorage
 } from '../utils/AsyncStorage'
 import data from '../data/data.json'
-
+import TEXT from '../common/text'
 
 export function getCategories() {
   return async function (dispatch) {
@@ -130,7 +130,7 @@ export function addNewMovieToCateogryById(name, rate, desc, categoryId) {
     } catch (error) {
       dispatch({
         type: TYPES.ERROR_ADDING_NEW_MOVIE,
-        error: 'Error While trying to add new movie',
+        error: TEXT.ERROR_ADD_MOVIE,
       });
     }
   };
@@ -158,7 +158,7 @@ export function deleteMovieItem(itemId, categoryId ) {
       } else {
         dispatch({
           type: TYPES.ERROR_DELETING_MOVIE,
-          error: 'Error While trying to remove this movie',
+          error: TEXT.ERROR_REMOVE_MOVIE,
         });
       }
     } catch (error) {

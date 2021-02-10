@@ -2,14 +2,18 @@
 
 
 import { StyleSheet } from "react-native"
-import DIMS from "../../common/dims"
-import FONTS from "../../common/fonts"
-import COLORS from "../../common/colors"
+
 
 const styles = StyleSheet.create({
-    loadingContainer : {
+    container: {
         justifyContent: 'center',
-         alignItems: 'center'
+        alignItems: 'center',
+        marginHorizontal: 16,
+        marginTop: 24
+    },
+    loadingContainer: {
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 });
 

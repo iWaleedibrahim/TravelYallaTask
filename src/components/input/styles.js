@@ -1,12 +1,10 @@
-import { StyleSheet, I18nManager } from "react-native"
+import { StyleSheet } from "react-native"
 import DIMS from "../../common/dims"
 import FONTS from "../../common/fonts"
 import COLORS from "../../common/colors"
 
-
 const textInputHeight = DIMS.screenHeight / 20
 const textInputWidth = DIMS.screenWidth * 0.7893
-
 
 const styles = StyleSheet.create({
   container: {

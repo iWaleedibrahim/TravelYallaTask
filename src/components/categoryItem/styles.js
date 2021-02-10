@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     marginTop: 8,
     marginHorizontal: 16,
-    // backgroundColor: 'teal',
     alignItems:'center'
   },
   image: {

@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { FlatList, Text, View, RefreshControl, ActivityIndicator } from 'react-native'
-import { Input, Button, MovieItem, AddElement, ModalWrapper } from '../../components'
-import IMAGES from '../../common/images'
-import Icon from "react-native-vector-icons/FontAwesome"
+import { MovieItem, AddElement, ModalWrapper } from '../../components'
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getMoviesByCateogryId, addNewMovieToCateogryById, editMovieItem, deleteMovieItem } from '../../actions'
 import styles from './styles'
 import COLORS from '../../common/colors'
-import FONTS from '../../common/fonts'
-import DIMS from '../../common/dims'
 import TEXT from '../../common/text'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
@@ -55,9 +51,6 @@ function Movies(props) {
             }
         }
     }
-    function editItem(itemId) {
-        props.editMovieItem(itemId)
-    }
 
     function deleteItem(itemId) {
         props.deleteMovieItem(itemId, props.route.params.id)
@@ -65,18 +58,15 @@ function Movies(props) {
 
     return (
         <>
-            <View style={{ justifyContent: 'center', alignItems: 'center', marginHorizontal: 16, marginTop: 24 }}>
+            <View style={styles.container}>
 
                 {editModalVisible &&
                     <ModalWrapper
                         closeModal={() => setEditModalVisible(false)}
                     >
-                        <View style={{ paddingHorizontal: 8, paddingVertical: 24 }}>
-                            <Text style={{
-                                fontFamily: FONTS.Baskerville,
-                                fontSize: 18,
-                            }}>
-                                We Should Implement Movie Edit Feature in this modal. ~ {'\n'} {'\n'}
+                        <View style={styles.modalChildContainer}>
+                            <Text style={styles.modalText}>
+                                We Should Implement Movie Edit Feature in this modal. ~ ~  {'\n'}
                             </Text>
                         </View>
                     </ModalWrapper>}
@@ -117,7 +107,6 @@ function Movies(props) {
 
                     <FlatList
                         data={movies}
-                        // style={{ backgroundColor: "#c3c3c3", }}
                         renderItem={({ item }) =>
                             <MovieItem
                                 key={item.id.toString()}

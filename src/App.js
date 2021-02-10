@@ -1,13 +1,11 @@
 
 
-import React,  { useEffect } from "react";
+import React from "react";
 import Navigation from "./navigation";
 import { SafeAreaView, StatusBar } from "react-native";
 import { Provider } from "react-redux";
 import COLORS from "./common/colors";
 import store from './store'
-import STORAGE_KEYS from './constants/storage_keys'
-import { removeDataFromLocalStorage } from './utils/AsyncStorage'
 
 export default function App() {
   return (

@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
-import { Text, Image, View, TouchableOpacity, ImageBackground } from 'react-native'
+import { Text, Image, View, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import FontAwsomeIcon from 'react-native-vector-icons/FontAwesome'
 import IMAGES from '../../common/images'
-
 
 function MovieItem({ onPressEdit, onPressDelete, onPressItem, item }) {
 
@@ -13,21 +12,19 @@ function MovieItem({ onPressEdit, onPressDelete, onPressItem, item }) {
 
     return (
         <View style={styles.itemContainer}>
-            <ImageBackground
+            <Image
                 style={styles.image}
                 source={source}
-            >
-                {/* <Text style={{position:'absolute', top: 0, left: 20, top: 70, color:'#fff', fontSize: 25}}>{item.name}</Text> */}
-            </ImageBackground>
-            <View style={{ flex: 1, alignItems: "flex-start", justifyContent: 'space-between' }}>
+            />
+            <View style={styles.leftContainer}>
                 <View>
                 <Text style={styles.title}>{item.name} </Text>
                 <Text style={styles.description}>{item.description}</Text>
                 </View>
 
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', width:'100%' }}>
+                <View style={styles.ratingContainer}>
 
-                    <View style={{ flexDirection: 'row' }}>
+                    <View style={styles.raw}>
                         {[1, 2, 3, 4].map(i =>
                             <>
                                 <AntDesign key={item.toString()} name="star" style={{ marginLeft: 4 }} size={12} color="#ffd700" />
@@ -45,7 +42,7 @@ function MovieItem({ onPressEdit, onPressDelete, onPressItem, item }) {
                         }
                     </View>
 
-                    <View style={{ flexDirection: 'row' }}>
+                    <View style={styles.raw}>
                         <TouchableOpacity
                             onPress={onPressEdit}
                             style={styles.button}>

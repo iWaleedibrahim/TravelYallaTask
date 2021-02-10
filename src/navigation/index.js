@@ -1,25 +1,12 @@
 import React from "react"
 import { createStackNavigator } from "@react-navigation/stack"
 import { NavigationContainer } from "@react-navigation/native"
-import Icon from "react-native-vector-icons/FontAwesome"
-import AntDesignIcon from "react-native-vector-icons/AntDesign"
 import COLORS from "../common/colors"
-import {
-  Home,
-  Movies,
-  Category
-} from "../screens"
-import IMAGES from "../common/images"
+import { Movies, Category } from "../screens"
 import FontAwsomeIcon from 'react-native-vector-icons/FontAwesome'
 import { removeDataFromLocalStorage } from "../utils/AsyncStorage"
 
 const MainStack = createStackNavigator()
-
-export const navigationRef = React.createRef()
-
-export function navigate(name, params) {
-  navigationRef.current?.navigate(name, params)
-}
 
 function MainStackNavigator() {
   return (
@@ -61,18 +48,13 @@ function MainStackNavigator() {
           title: route.params.name,
         })}
       />
-      <MainStack.Screen
-        name="Home"
-        component={Home}
-        options={{}}
-      />
     </MainStack.Navigator>
   )
 }
 
 export default function Navigator() {
   return (
-    <NavigationContainer ref={navigationRef}>
+    <NavigationContainer>
       <MainStackNavigator />
     </NavigationContainer>
   )
