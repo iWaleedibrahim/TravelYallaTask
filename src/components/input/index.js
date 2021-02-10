@@ -35,6 +35,8 @@ export default function Input(props) {
         autoCapitalize={"none"}
         keyboardType={keyboardType || 'default'}
         autoCorrect={false}
+        clearButtonMode='always'
+        {...props}
       />
     </View>
   )

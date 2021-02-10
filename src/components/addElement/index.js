@@ -8,6 +8,7 @@ import _ from 'lodash'
 
 export default function AddElement(props) {
   
+
   const [values, setValues] = useState({})
 
   const { fields, onPressButton, buttonTitle } = props
@@ -28,10 +29,10 @@ export default function AddElement(props) {
             placeholder={item.placeHolder}
             keyboardType={item.keyboardType}
             value={typeof values == 'object' ? values?.[item?.id] : ''  }
+           
           />
         )
       })}
-
 
       <Button
         title={buttonTitle}

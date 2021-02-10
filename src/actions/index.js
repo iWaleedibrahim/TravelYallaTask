@@ -48,7 +48,7 @@ export function addNewCateogry(categoryName, categoryDesc) {
     try {
       let categories_collection = await getDataFromLocalStorage(STORAGE_KEYS.CATEOGRIES);
 
-      let categories_count = categories_collection.length
+      let categories_count = categories_collection?.length 
 
       if (categories_collection) {
         console.warn("last id", categories_collection[categories_collection.length - 1].id)
