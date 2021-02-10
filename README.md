@@ -1,6 +1,8 @@
 
 
-## Important Notes Understanding App Behavior.
+ Important note to understand the app behavior.
+ 
+ <hr/>
 
 
 inside /src/data/data.json you can find .json file from task requirments, we added a little data fields and two extra categories to spread the UI to be like the design of the task.
