@@ -53,6 +53,17 @@ export const reducer = (state = INTIAL_STATE, action) => {
         ...state,
         error: action.error
       };
+    case TYPES.DELETE_MOVIE_SUCCESS:
+      return {
+        ...state,
+        movies: action.data,
+        error: ''
+      };
+    case TYPES.ERROR_DELETING_MOVIE:
+      return {
+        ...state,
+        error: action.error
+      };
     default:
       return state;
   }

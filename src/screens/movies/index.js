@@ -5,7 +5,7 @@ import IMAGES from '../../common/images'
 import Icon from "react-native-vector-icons/FontAwesome"
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { getMoviesByCateogryId, addNewMovieToCateogryById } from '../../actions'
+import { getMoviesByCateogryId, addNewMovieToCateogryById, editMovieItem, deleteMovieItem } from '../../actions'
 import styles from './styles'
 import COLORS from '../../common/colors'
 import TEXT from '../../common/text'
@@ -34,7 +34,7 @@ function Movies(props) {
         if (props.movies) {
             setMovies(props.movies.reverse())
         }
-          setRefreshing(false)
+        setRefreshing(false)
     }, [props.movies]);
 
     function createNewMovie(values) {
@@ -53,6 +53,13 @@ function Movies(props) {
             }
         }
     }
+    function editItem(itemId) {
+        props.editMovieItem(itemId)
+    }
+
+    function deleteItem(itemId) {
+        props.deleteMovieItem(itemId, props.route.params.id)
+    }
 
     return (
         <>
@@ -62,18 +69,18 @@ function Movies(props) {
                     fields={[
                         {
                             id: 'name',
-                              fieldIcon: <MaterialIcons name="domain" size={20} color="gray" style={{marginRight: 10}}/>,
+                            fieldIcon: <MaterialIcons name="domain" size={20} color="gray" style={{ marginRight: 10 }} />,
                             placeHolder: 'Movie Name',
                         },
                         {
                             id: 'rate',
-                              fieldIcon: <MaterialIcons name="domain" size={20} color="gray" style={{marginRight: 10}}/>,
+                            fieldIcon: <MaterialIcons name="domain" size={20} color="gray" style={{ marginRight: 10 }} />,
                             placeHolder: "Movie Rate",
                             keyboardType: 'numeric',
                         },
                         {
                             id: 'desc',
-                              fieldIcon: <MaterialIcons name="domain" size={20} color="gray" style={{marginRight: 10}}/>,
+                            fieldIcon: <MaterialIcons name="domain" size={20} color="gray" style={{ marginRight: 10 }} />,
                             placeHolder: "Movie Description",
                         },
                     ]}
@@ -99,8 +106,8 @@ function Movies(props) {
                         renderItem={({ item }) =>
                             <MovieItem
                                 key={item.id.toString()}
-                                onPressEdit={() => console.warn('hello')}
-                                onPressDelete={() => console.warn('there!')}
+                                onPressEdit={() => editItem(item.id)}
+                                onPressDelete={() => deleteItem(item.id)}
                                 item={item}
                             />
                         }
@@ -138,6 +145,8 @@ const mapDispatchToProps = dispatch =>
         {
             getMoviesByCateogryId,
             addNewMovieToCateogryById,
+            editMovieItem,
+            deleteMovieItem
         },
         dispatch,
     );

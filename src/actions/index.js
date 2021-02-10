@@ -117,6 +117,7 @@ export function addNewMovieToCateogryById(name, rate, desc, categoryId) {
             rate: rate,
             description: desc
           })
+
       if (movies.length > movies_count) {
         dispatch({ type: TYPES.ADD_NEW_MOVIE_SUCCESS, data: movies });
         setDataToLocalStorage(STORAGE_KEYS.CATEOGRIES, categories_collection)
@@ -129,9 +130,50 @@ export function addNewMovieToCateogryById(name, rate, desc, categoryId) {
     } catch (error) {
       dispatch({
         type: TYPES.ERROR_ADDING_NEW_MOVIE,
+        error: 'Error While trying to add new movie',
+      });
+    }
+  };
+}
+
+
+export function deleteMovieItem(itemId, categoryId ) {
+  return async function (dispatch) {
+    try {
+      let categories_collection = await getDataFromLocalStorage(STORAGE_KEYS.CATEOGRIES);
+
+      let category = categories_collection.find(item => item.id == categoryId)
+      let movies = category?.movies ? category?.movies : []
+      let movies_count = movies.length
+
+      movies = movies.filter( item => item.id !== itemId)
+
+      let current_cat_index = categories_collection.indexOf(category)
+
+      categories_collection[current_cat_index].movies = movies
+
+      if (movies.length < movies_count) {
+        dispatch({ type: TYPES.DELETE_MOVIE_SUCCESS, data: movies });
+        setDataToLocalStorage(STORAGE_KEYS.CATEOGRIES, categories_collection)
+      } else {
+        dispatch({
+          type: TYPES.ERROR_DELETING_MOVIE,
+          error: 'Error While trying to remove this movie',
+        });
+      }
+    } catch (error) {
+      dispatch({
+        type: TYPES.ERROR_DELETING_MOVIE,
         error: error,
       });
     }
   };
 }
+
+
+export function editMovieItem(itemId) {
+  return async function (dispatch) {
+  };
+}
+
 

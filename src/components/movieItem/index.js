@@ -47,6 +47,7 @@ function MovieItem({ onPressEdit, onPressDelete, onPressItem, item }) {
 
                     <View style={{ flexDirection: 'row' }}>
                         <TouchableOpacity
+                            onPress={onPressEdit}
                             style={styles.button}>
                             <Text style={[styles.buttonText, { color: '#006400' }]}>
                                 Edit
@@ -54,6 +55,7 @@ function MovieItem({ onPressEdit, onPressDelete, onPressItem, item }) {
                         </TouchableOpacity>
 
                         <TouchableOpacity
+                            onPress={onPressDelete}
                             style={styles.button}>
                             <Text style={[styles.buttonText, { color:  '#8b0000' }]}>
                                 Delete

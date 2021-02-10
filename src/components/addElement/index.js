@@ -8,7 +8,6 @@ import _ from 'lodash'
 
 export default function AddElement(props) {
   
-
   const [values, setValues] = useState({})
 
   const { fields, onPressButton, buttonTitle } = props
@@ -32,6 +31,7 @@ export default function AddElement(props) {
           />
         )
       })}
+
 
       <Button
         title={buttonTitle}
